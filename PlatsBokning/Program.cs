@@ -25,10 +25,13 @@ namespace PlatsBokning
 
             while (true)
             {
-                seat.SeatResetTemplate();
-                handler.Save();
                 handler.Load();
-                
+                if(seats.Count == 0) 
+                {
+                    seat.SeatResetTemplate();
+                    handler.Save();
+                }
+
                 booked.Clear();
                 foreach (Seat seatx in seats)
                 {
